@@ -1,0 +1,11 @@
+version: "3.4"
+services:
+  auth:
+    image: auth
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    volumes:
+      - ${PWD}/:/app
+    working_dir: /app
+    command: ["npm", "start"]
